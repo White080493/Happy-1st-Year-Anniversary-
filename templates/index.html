@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffy's Butterfly Chase</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #87CEEB;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        #gameCanvas {
+            border: 10px solid #4CAF50;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        #startScreen {
+            position: absolute;
+            text-align: center;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="startScreen">
+        <h1>Welcome to Fluffy's Butterfly Chase!</h1>
+        <p>Help Pochacco catch 10 rabbits and 10 butterflies in 30 seconds to keep them safe!</p>
+        <button id="startButton">Start Game</button>
+    </div>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <audio id="bgMusic" src="{{ url_for('static', filename='background_music.mp3') }}" loop></audio>
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>
